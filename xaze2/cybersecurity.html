@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cyber Security | X Azerbaijan</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+--bg:#0b0e14;
+--surface:#161b22;
+--accent:#7000ff;
+--neon:#00f2fe;
+--danger:#ff4d4d;
+--safe:#00ff8c;
+}
+
+body{
+background:var(--bg);
+color:white;
+font-family: 'Plus Jakarta Sans', sans-serif;
+margin:0;
+}
+
+/* HERO */
+
+.cyber-hero{
+padding:160px 120px 120px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.cyber-title{
+font-size:50px;
+font-weight:800;
+background:linear-gradient(90deg,#ff004c,#7000ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.cyber-desc{
+opacity:0.6;
+margin-top:20px;
+max-width:420px;
+}
+
+/* SERVICES */
+
+.services{
+padding:80px 120px;
+}
+
+.section-title{
+font-size:34px;
+font-weight:800;
+margin-bottom:50px;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.service-card{
+background:var(--surface);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.service-card:hover{
+border-color:var(--accent);
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(112,0,255,0.2);
+}
+
+.service-card i{
+font-size:24px;
+color:var(--accent);
+margin-bottom:10px;
+}
+
+/* THREAT DASHBOARD */
+
+.dashboard{
+padding:80px 120px;
+}
+
+.threat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.threat-card{
+background:var(--surface);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.threat-value{
+font-size:40px;
+font-weight:800;
+margin-top:10px;
+}
+
+/* SCANNER */
+
+.scanner{
+padding:80px 120px;
+}
+
+.scan-box{
+background:var(--surface);
+padding:40px;
+border-radius:25px;
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.scan-input{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:1px solid #333;
+background:#0b0e14;
+color:white;
+margin-top:15px;
+}
+
+.scan-btn{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+background:var(--accent);
+color:white;
+border-radius:10px;
+font-weight:700;
+cursor:pointer;
+}
+
+.scan-result{
+margin-top:20px;
+font-size:18px;
+font-weight:700;
+}
+
+/* SECURITY LEVEL */
+
+.level{
+padding:80px 120px;
+}
+
+.level-bar{
+background:#1c212a;
+height:20px;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.level-fill{
+height:100%;
+width:65%;
+background:linear-gradient(90deg,#ff004c,#7000ff);
+}
+
+/* FAQ */
+
+.faq{
+padding:80px 120px;
+}
+
+.faq-item{
+background:var(--surface);
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+opacity:0.7;
+margin-top:10px;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="cyber-hero">
+
+<div>
+
+<h1 class="cyber-title">
+Cyber Security
+</h1>
+
+<p class="cyber-desc">
+Rəqəmsal sistemlərinizi hücumlardan qorumaq üçün 
+professional kibertəhlükəsizlik xidmətləri təqdim edirik.
+</p>
+
+</div>
+
+<i class="fa-solid fa-shield-halved" style="font-size:120px;color:#7000ff;"></i>
+
+</section>
+
+
+<section class="services">
+
+<h2 class="section-title">
+Təhlükəsizlik xidmətləri
+</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<i class="fa-solid fa-user-secret"></i>
+<h3>Penetration Test</h3>
+<p>Sistemlərdə təhlükəsizlik boşluqlarının test edilməsi</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-bug"></i>
+<h3>Vulnerability Scan</h3>
+<p>Avtomatik zəiflik aşkarlama sistemi</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-network-wired"></i>
+<h3>Network Security</h3>
+<p>Firewall və trafik monitorinqi</p>
+</div>
+
+<div class="service-card">
+<i class="fa-solid fa-lock"></i>
+<h3>Data Protection</h3>
+<p>Məlumat şifrələmə və qoruma</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="dashboard">
+
+<h2 class="section-title">
+Threat Monitor
+</h2>
+
+<div class="threat-grid">
+
+<div class="threat-card">
+<i class="fa-solid fa-shield"></i>
+<div class="threat-value" id="blocked">0</div>
+<p>Bloklanan hücumlar</p>
+</div>
+
+<div class="threat-card">
+<i class="fa-solid fa-bug"></i>
+<div class="threat-value" id="malware">0</div>
+<p>Malware aşkarlanıb</p>
+</div>
+
+<div class="threat-card">
+<i class="fa-solid fa-user-secret"></i>
+<div class="threat-value" id="intrusion">0</div>
+<p>İcazəsiz giriş</p>
+</div>
+
+<div class="threat-card">
+<i class="fa-solid fa-network-wired"></i>
+<div class="threat-value" id="traffic">0</div>
+<p>Şəbəkə hücumu</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="scanner">
+
+<h2 class="section-title">
+Website Security Scan
+</h2>
+
+<div class="scan-box">
+
+<input
+class="scan-input"
+id="scanInput"
+placeholder="website.com yazın">
+
+<button class="scan-btn" onclick="scanSite()">
+Scan et
+</button>
+
+<div class="scan-result" id="scanResult"></div>
+
+</div>
+
+</section>
+
+
+<section class="level">
+
+<h2 class="section-title">
+Sistem təhlükəsizlik səviyyəsi
+</h2>
+
+<div class="level-bar">
+<div class="level-fill" id="securityLevel"></div>
+</div>
+
+</section>
+
+
+<section class="faq">
+
+<h2 class="section-title">
+FAQ
+</h2>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+Penetration test nədir?
+<div class="faq-answer">
+Sistemə real hücum simulyasiya edilərək boşluqlar aşkar edilir.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+Firewall nə edir?
+<div class="faq-answer">
+Firewall şəbəkəyə gələn və gedən trafiki filtr edir.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+DDoS qoruması varmı?
+<div class="faq-answer">
+Bəli sistemimiz Layer 3 və Layer 7 hücumlarını bloklayır.
+</div>
+</div>
+
+</section>
+
+
+<script>
+
+/* threat dashboard random */
+
+function updateThreats(){
+
+document.getElementById("blocked").innerText =
+Math.floor(Math.random()*9000)
+
+document.getElementById("malware").innerText =
+Math.floor(Math.random()*300)
+
+document.getElementById("intrusion").innerText =
+Math.floor(Math.random()*200)
+
+document.getElementById("traffic").innerText =
+Math.floor(Math.random()*500)
+
+}
+
+setInterval(updateThreats,2000)
+
+updateThreats()
+
+
+/* scan */
+
+function scanSite(){
+
+const site=document.getElementById("scanInput").value
+
+if(site==="") return
+
+const result=document.getElementById("scanResult")
+
+result.innerHTML="Scanning..."
+
+setTimeout(()=>{
+
+const safe=Math.random()>0.3
+
+if(safe){
+
+result.innerHTML="✔ Sistem təhlükəsizdir"
+result.style.color="#00ff8c"
+
+}else{
+
+result.innerHTML="⚠ Təhlükəsizlik riskləri tapıldı"
+result.style.color="#ff4d4d"
+
+}
+
+},2000)
+
+}
+
+
+/* faq */
+
+function toggleFaq(el){
+
+const ans=el.querySelector(".faq-answer")
+
+ans.style.display =
+ans.style.display==="block" ? "none":"block"
+
+}
+
+</script>
+
+</body>
+</html>

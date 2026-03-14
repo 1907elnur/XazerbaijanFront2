@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Server / Hosting | X Azerbaijan</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+--bg:#0b0e14;
+--surface:#161b22;
+--accent:#7000ff;
+--neon-blue:#00f2fe;
+--text:#ffffff;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family: 'Plus Jakarta Sans', sans-serif;
+margin:0;
+}
+
+/* HERO */
+
+.hosting-hero{
+padding:160px 120px 100px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.hero-title{
+font-size:52px;
+font-weight:800;
+background:linear-gradient(90deg,#00f2fe,#7000ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-desc{
+opacity:0.6;
+max-width:420px;
+margin-top:20px;
+}
+
+/* PRICING */
+
+.pricing{
+padding:80px 120px;
+}
+
+.section-title{
+font-size:34px;
+font-weight:800;
+margin-bottom:50px;
+}
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.price-card{
+background:var(--surface);
+padding:40px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.4s;
+}
+
+.price-card:hover{
+transform:translateY(-10px);
+border-color:var(--accent);
+box-shadow:0 15px 40px rgba(112,0,255,0.2);
+}
+
+.price-title{
+font-size:18px;
+color:var(--neon-blue);
+margin-bottom:15px;
+}
+
+.price{
+font-size:38px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.price small{
+font-size:14px;
+opacity:0.5;
+}
+
+.feature{
+opacity:0.7;
+margin-bottom:8px;
+font-size:14px;
+}
+
+.buy-btn{
+margin-top:20px;
+background:var(--accent);
+border:none;
+padding:12px 20px;
+border-radius:10px;
+color:white;
+font-weight:700;
+cursor:pointer;
+}
+
+/* FEATURES */
+
+.features{
+padding:80px 120px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.feature-box{
+background:var(--surface);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.feature-box i{
+font-size:22px;
+color:var(--accent);
+margin-bottom:10px;
+}
+
+/* DATACENTER */
+
+.datacenter{
+padding:80px 120px;
+}
+
+.dc-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.dc-card{
+background:var(--surface);
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* FAQ */
+
+.faq{
+padding:80px 120px;
+}
+
+.faq-item{
+background:var(--surface);
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+.faq-answer{
+display:none;
+opacity:0.7;
+margin-top:10px;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hosting-hero">
+
+<div>
+
+<h1 class="hero-title">
+Server & Hosting
+</h1>
+
+<p class="hero-desc">
+Yüksək performanslı cloud serverlər, təhlükəsiz hosting və 
+global datacenter infrastrukturu ilə layihələrinizi gücləndirin.
+</p>
+
+</div>
+
+<i class="fa-solid fa-server" style="font-size:120px;color:#7000ff;"></i>
+
+</section>
+
+
+<section class="pricing">
+
+<h2 class="section-title">
+Hosting Paketləri
+</h2>
+
+<div class="pricing-grid">
+
+<div class="price-card">
+
+<div class="price-title">Starter VPS</div>
+
+<div class="price">
+$9 <small>/ay</small>
+</div>
+
+<div class="feature">1 CPU Core</div>
+<div class="feature">2GB RAM</div>
+<div class="feature">40GB SSD</div>
+<div class="feature">1TB Trafik</div>
+
+<button class="buy-btn">
+Sifariş et
+</button>
+
+</div>
+
+
+<div class="price-card">
+
+<div class="price-title">Business VPS</div>
+
+<div class="price">
+$29 <small>/ay</small>
+</div>
+
+<div class="feature">4 CPU Core</div>
+<div class="feature">8GB RAM</div>
+<div class="feature">120GB NVMe</div>
+<div class="feature">5TB Trafik</div>
+
+<button class="buy-btn">
+Sifariş et
+</button>
+
+</div>
+
+
+<div class="price-card">
+
+<div class="price-title">Enterprise Cloud</div>
+
+<div class="price">
+$99 <small>/ay</small>
+</div>
+
+<div class="feature">16 CPU</div>
+<div class="feature">32GB RAM</div>
+<div class="feature">500GB NVMe</div>
+<div class="feature">Unlimited Trafik</div>
+
+<button class="buy-btn">
+Sifariş et
+</button>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="features">
+
+<h2 class="section-title">
+Hosting üstünlükləri
+</h2>
+
+<div class="feature-grid">
+
+<div class="feature-box">
+<i class="fa-solid fa-bolt"></i>
+<h3>Ultra sürətli NVMe</h3>
+<p>Yüksək performanslı disk infrastrukturu</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-shield-halved"></i>
+<h3>DDoS qoruma</h3>
+<p>Layer 3 və Layer 7 müdafiə sistemi</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-globe"></i>
+<h3>Global şəbəkə</h3>
+<p>Avropa və Asiya datacenterləri</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-headset"></i>
+<h3>24/7 Support</h3>
+<p>Texniki dəstək komandası</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="datacenter">
+
+<h2 class="section-title">
+Datacenter yerləri
+</h2>
+
+<div class="dc-grid">
+
+<div class="dc-card">🇦🇿 Bakı</div>
+<div class="dc-card">🇩🇪 Frankfurt</div>
+<div class="dc-card">🇳🇱 Amsterdam</div>
+<div class="dc-card">🇸🇬 Singapore</div>
+
+</div>
+
+</section>
+
+
+<section class="faq">
+
+<h2 class="section-title">
+FAQ
+</h2>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+Server neçə dəqiqəyə aktiv olur?
+<div class="faq-answer">
+Serverlər avtomatik olaraq 1-2 dəqiqə ərzində aktivləşdirilir.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+Root access varmı?
+<div class="faq-answer">
+Bəli bütün VPS serverlərdə tam root access verilir.
+</div>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+Backup varmı?
+<div class="faq-answer">
+Gündəlik snapshot backup sistemi mövcuddur.
+</div>
+</div>
+
+</section>
+
+
+<script>
+
+function toggleFaq(el){
+
+const ans = el.querySelector(".faq-answer")
+
+ans.style.display =
+ans.style.display === "block" ? "none" : "block"
+
+}
+
+</script>
+
+</body>
+</html>

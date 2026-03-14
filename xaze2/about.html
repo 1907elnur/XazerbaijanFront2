@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Haqqımızda | X Azerbaijan</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+:root{
+--bg:#0b0e14;
+--surface:#161b22;
+--accent:#7000ff;
+--neon:#00f2fe;
+}
+
+body{
+background:var(--bg);
+color:white;
+font-family:'Plus Jakarta Sans',sans-serif;
+margin:0;
+}
+
+/* HERO */
+
+.about-hero{
+padding:160px 120px 120px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.about-title{
+font-size:50px;
+font-weight:800;
+background:linear-gradient(90deg,#00f2fe,#7000ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.about-desc{
+opacity:0.6;
+max-width:450px;
+margin-top:20px;
+}
+
+/* STATS */
+
+.stats{
+padding:80px 120px;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat-card{
+background:var(--surface);
+padding:30px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.stat-number{
+font-size:40px;
+font-weight:800;
+color:var(--accent);
+}
+
+/* MISSION */
+
+.mission{
+padding:80px 120px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.mission-box{
+background:var(--surface);
+padding:40px;
+border-radius:25px;
+}
+
+/* TEAM */
+
+.team{
+padding:80px 120px;
+}
+
+.section-title{
+font-size:34px;
+font-weight:800;
+margin-bottom:50px;
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.member{
+background:var(--surface);
+border-radius:20px;
+padding:25px;
+text-align:center;
+}
+
+.member img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+.member h3{
+margin:5px 0;
+}
+
+.member p{
+opacity:0.6;
+font-size:13px;
+}
+
+/* TIMELINE */
+
+.timeline{
+padding:80px 120px;
+}
+
+.timeline-item{
+background:var(--surface);
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+/* PARTNERS */
+
+.partners{
+padding:80px 120px;
+}
+
+.partner-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+}
+
+.partner{
+background:var(--surface);
+padding:25px;
+border-radius:20px;
+text-align:center;
+font-weight:700;
+opacity:0.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="about-hero">
+
+<div>
+
+<h1 class="about-title">
+Biz kimik?
+</h1>
+
+<p class="about-desc">
+
+X Azerbaijan texnologiya ekosistemi olaraq
+bulud sistemləri, kibertəhlükəsizlik, server infrastrukturu və
+rəqəmsal həllər təqdim edən innovativ platformadır.
+
+</p>
+
+</div>
+
+<i class="fa-solid fa-microchip" style="font-size:120px;color:#7000ff;"></i>
+
+</section>
+
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-number" id="projects">0</div>
+<p>Layihə</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-number" id="clients">0</div>
+<p>Müştəri</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-number" id="servers">0</div>
+<p>Server</p>
+</div>
+
+<div class="stat-card">
+<div class="stat-number" id="countries">0</div>
+<p>Ölkə</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="mission">
+
+<div class="mission-box">
+
+<h2>Missiyamız</h2>
+
+<p>
+
+Azərbaycanın rəqəmsal gələcəyini qurmaq və
+qlobal texnologiya infrastrukturu ilə
+innovativ həllər təqdim etmək.
+
+</p>
+
+</div>
+
+<div class="mission-box">
+
+<h2>Vizyonumuz</h2>
+
+<p>
+
+Qafqaz regionunun ən böyük
+texnologiya və bulud infrastrukturu
+mərkəzinə çevrilmək.
+
+</p>
+
+</div>
+
+</section>
+
+
+<section class="team">
+
+<h2 class="section-title">
+Komandamız
+</h2>
+
+<div class="team-grid">
+
+<div class="member">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<h3>Elvin Məmmədov</h3>
+<p>CEO</p>
+</div>
+
+<div class="member">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<h3>Nigar Əliyeva</h3>
+<p>Cyber Security Lead</p>
+</div>
+
+<div class="member">
+<img src="https://randomuser.me/api/portraits/men/65.jpg">
+<h3>Orxan Hüseynov</h3>
+<p>Cloud Engineer</p>
+</div>
+
+<div class="member">
+<img src="https://randomuser.me/api/portraits/women/55.jpg">
+<h3>Leyla Qasımova</h3>
+<p>UI/UX Designer</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="timeline">
+
+<h2 class="section-title">
+Tarixçəmiz
+</h2>
+
+<div class="timeline-item">
+<b>2022</b> – Layihənin başlanğıcı
+</div>
+
+<div class="timeline-item">
+<b>2023</b> – İlk cloud infrastrukturu
+</div>
+
+<div class="timeline-item">
+<b>2024</b> – Cybersecurity platformasının yaradılması
+</div>
+
+<div class="timeline-item">
+<b>2025</b> – Qlobal server şəbəkəsi
+</div>
+
+</section>
+
+
+<section class="partners">
+
+<h2 class="section-title">
+Partnyorlarımız
+</h2>
+
+<div class="partner-grid">
+
+<div class="partner">Microsoft</div>
+<div class="partner">Google Cloud</div>
+<div class="partner">IBM</div>
+<div class="partner">Cisco</div>
+<div class="partner">Amazon AWS</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* animated stats */
+
+function counter(id,target){
+
+let i=0
+
+const el=document.getElementById(id)
+
+const interval=setInterval(()=>{
+
+i+=Math.ceil(target/50)
+
+if(i>=target){
+i=target
+clearInterval(interval)
+}
+
+el.innerText=i
+
+},40)
+
+}
+
+counter("projects",120)
+counter("clients",340)
+counter("servers",950)
+counter("countries",18)
+
+</script>
+
+</body>
+</html>

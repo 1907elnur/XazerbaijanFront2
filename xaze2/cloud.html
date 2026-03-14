@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Sistemləri | Xazerbaijan</title>
+
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: #0b0e14;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --accent: #7000ff;
+            --surface: #161b22;
+            --neon: #00f2fe;
+        }
+
+        /* ================= HEADER + SIDEBAR ================= */
+        /* BU HİSSƏ SƏNİN KODUNDUR — DƏYİŞDİRİLMƏYİB */
+
+        /* (burada sənin əvvəl göndərdiyin header + sidebar CSS qalır) */
+
+        /* ================= CLOUD HERO ================= */
+
+        .cloud-hero {
+            min-height: 90vh;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            gap: 60px;
+            padding: 140px 80px 80px 140px;
+        }
+
+        .cloud-hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #00f2fe, #7000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cloud-hero p {
+            margin-top: 25px;
+            max-width: 520px;
+            font-size: 15px;
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        .cloud-tags {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .cloud-tags span {
+            padding: 10px 18px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        .cloud-visual {
+            background: radial-gradient(circle at top, #7000ff33, transparent 60%);
+            border-radius: 40px;
+            padding: 60px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .cloud-visual i {
+            font-size: 120px;
+            color: var(--neon);
+            margin-bottom: 25px;
+        }
+
+        /* ================= CLOUD SERVICES ================= */
+
+        .cloud-services {
+            padding: 60px 80px 80px 140px;
+        }
+
+        .cloud-services h2 {
+            font-size: 34px;
+            margin-bottom: 40px;
+            font-weight: 800;
+        }
+
+        .cloud-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .cloud-card {
+            background: var(--surface);
+            border-radius: 25px;
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: 0.4s;
+        }
+
+        .cloud-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 50px rgba(112,0,255,0.25);
+        }
+
+        .cloud-card i {
+            font-size: 28px;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .cloud-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .cloud-card p {
+            font-size: 13px;
+            opacity: 0.65;
+            line-height: 1.6;
+        }
+
+        /* ================= CTA ================= */
+
+        .cloud-cta {
+            margin: 80px 140px;
+            background: linear-gradient(135deg, #7000ff, #00f2fe);
+            border-radius: 40px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cloud-cta h2 {
+            font-size: 34px;
+            font-weight: 800;
+        }
+
+        .cloud-cta button {
+            background: #ffffff;
+            color: #000;
+            border: none;
+            padding: 16px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER + SIDEBAR ================= -->
+<!-- BURAYA SƏNİN ÖZ HEADER + MEGAMENU HTML KODUNU AYNEN YAPIŞDIR -->
+
+<!-- ================= CLOUD HERO ================= -->
+
+<section class="cloud-hero">
+    <div>
+        <h1>Bulud Sistemləri<br>Gələcəyin İnfrastrukturudur</h1>
+        <p>
+            AWS, Azure və Google Cloud üzərində təhlükəsiz, elastik və
+            yüksək performanslı sistemlər qururuq.
+        </p>
+
+        <div class="cloud-tags">
+            <span>AWS</span>
+            <span>Azure</span>
+            <span>Google Cloud</span>
+            <span>DevOps</span>
+            <span>Kubernetes</span>
+        </div>
+    </div>
+
+    <div class="cloud-visual">
+        <i class="fa-solid fa-cloud"></i>
+        <h3>Enterprise Cloud Architecture</h3>
+    </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="cloud-services">
+    <h2>Bulud Həllərimiz</h2>
+
+    <div class="cloud-grid">
+        <div class="cloud-card">
+            <i class="fa-solid fa-server"></i>
+            <h3>Cloud Server</h3>
+            <p>Yüksək performanslı virtual serverlər.</p>
+        </div>
+
+        <div class="cloud-card">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>Load Balancer</h3>
+            <p>Yüksək trafik üçün balanslaşdırma.</p>
+        </div>
+
+        <div class="cloud-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Cloud Security</h3>
+            <p>DDoS, firewall və IAM qorunması.</p>
+        </div>
+
+        <div class="cloud-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>DevOps</h3>
+            <p>CI/CD, Docker, Kubernetes.</p>
+        </div>
+
+        <div class="cloud-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Cloud Database</h3>
+            <p>Managed SQL və NoSQL sistemləri.</p>
+        </div>
+
+        <div class="cloud-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Monitoring</h3>
+            <p>Real-time izləmə və analitika.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cloud-cta">
+    <h2>Bulud sisteminə keçməyə hazırsan?</h2>
+    <button>Bizimlə əlaqə</button>
+</section>
+
+</body>
+</html>
