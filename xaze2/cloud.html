@@ -3,255 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Sistemləri | Xazerbaijan</title>
-
-    <!-- ICONS -->
+    <title>Bulud Həlləri | Xazerbaijan Tech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        body {
-            background: #0b0e14;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-
         :root {
-            --accent: #7000ff;
-            --surface: #161b22;
-            --neon: #00f2fe;
+            --cloud-blue: #00d2ff;
+            --deep-space: #050508;
+            --nebula: rgba(0, 210, 255, 0.1);
         }
 
-        /* ================= HEADER + SIDEBAR ================= */
-        /* BU HİSSƏ SƏNİN KODUNDUR — DƏYİŞDİRİLMƏYİB */
+        body { background-color: var(--deep-space); color: white; }
 
-        /* (burada sənin əvvəl göndərdiyin header + sidebar CSS qalır) */
-
-        /* ================= CLOUD HERO ================= */
-
+        /* Cloud Hero Section */
         .cloud-hero {
-            min-height: 90vh;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            align-items: center;
-            gap: 60px;
-            padding: 140px 80px 80px 140px;
+            padding: 180px 10% 100px;
+            background: radial-gradient(circle at 50% 0%, var(--nebula) 0%, transparent 70%);
+            text-align: center;
+        }
+
+        .hero-badge {
+            background: rgba(0, 210, 255, 0.1);
+            border: 1px solid var(--cloud-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--cloud-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
         .cloud-hero h1 {
-            font-size: 56px;
+            font-size: clamp(35px, 5vw, 60px);
             font-weight: 800;
-            line-height: 1.1;
-            background: linear-gradient(90deg, #00f2fe, #7000ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .cloud-hero p {
-            margin-top: 25px;
-            max-width: 520px;
-            font-size: 15px;
-            opacity: 0.7;
-            line-height: 1.7;
-        }
-
-        .cloud-tags {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .cloud-tags span {
-            padding: 10px 18px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-        }
-
-        .cloud-visual {
-            background: radial-gradient(circle at top, #7000ff33, transparent 60%);
-            border-radius: 40px;
-            padding: 60px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .cloud-visual i {
-            font-size: 120px;
-            color: var(--neon);
             margin-bottom: 25px;
         }
 
-        /* ================= CLOUD SERVICES ================= */
+        .highlight { color: var(--cloud-blue); text-shadow: 0 0 20px rgba(0, 210, 255, 0.4); }
 
-        .cloud-services {
-            padding: 60px 80px 80px 140px;
-        }
-
-        .cloud-services h2 {
-            font-size: 34px;
-            margin-bottom: 40px;
-            font-weight: 800;
-        }
-
-        .cloud-grid {
+        /* Infrastructure Grid */
+        .infra-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            padding: 50px 10%;
         }
 
-        .cloud-card {
-            background: var(--surface);
-            border-radius: 25px;
+        .infra-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 35px;
-            border: 1px solid rgba(255,255,255,0.06);
-            transition: 0.4s;
+            border-radius: 24px;
+            transition: 0.3s ease;
+            position: relative;
         }
 
-        .cloud-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 50px rgba(112,0,255,0.25);
+        .infra-card:hover {
+            border-color: var(--cloud-blue);
+            background: rgba(0, 210, 255, 0.03);
+            transform: scale(1.02);
         }
 
-        .cloud-card i {
-            font-size: 28px;
-            color: var(--accent);
-            margin-bottom: 15px;
+        .infra-card i {
+            font-size: 35px;
+            color: var(--cloud-blue);
+            margin-bottom: 20px;
         }
 
-        .cloud-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
+        .infra-card h3 { margin-bottom: 15px; font-size: 20px; }
 
-        .cloud-card p {
-            font-size: 13px;
-            opacity: 0.65;
-            line-height: 1.6;
-        }
+        .infra-card p { opacity: 0.6; line-height: 1.6; font-size: 14px; }
 
-        /* ================= CTA ================= */
+/* Pricing Styles */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-        .cloud-cta {
-            margin: 80px 140px;
-            background: linear-gradient(135deg, #7000ff, #00f2fe);
-            border-radius: 40px;
-            padding: 60px;
+.price-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    transition: 0.4s;
+    position: relative;
+}
+
+.price-card.featured {
+    border-color: var(--cloud-blue);
+    background: rgba(0, 210, 255, 0.05);
+    transform: scale(1.05);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cloud-blue);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.card-header h3 { font-size: 24px; margin-bottom: 10px; }
+.price { font-size: 36px; font-weight: 800; color: var(--cloud-blue); margin-bottom: 30px; }
+.price span { font-size: 14px; color: rgba(255,255,255,0.5); }
+
+.price-card ul { list-style: none; padding: 0; margin-bottom: 35px; text-align: left; }
+.price-card ul li { margin-bottom: 15px; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+.price-card ul li i.fa-check { color: #00ff88; }
+.price-card ul li.disabled { opacity: 0.3; }
+
+.buy-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--cloud-blue);
+    background: transparent;
+    color: var(--cloud-blue);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.featured-btn {
+    background: var(--cloud-blue);
+    color: #000;
+}
+
+.buy-btn:hover {
+    background: var(--cloud-blue);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+        /* Pricing/Plan Style Form */
+        .cloud-order-container {
+            padding: 100px 10%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .cloud-cta h2 {
-            font-size: 34px;
-            font-weight: 800;
-        }
-
-        .cloud-cta button {
-            background: #ffffff;
-            color: #000;
-            border: none;
-            padding: 16px 35px;
+        .cloud-form-box {
+            background: linear-gradient(145deg, #111, #0a0a0c);
+            padding: 50px;
             border-radius: 30px;
-            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cloud-input, .cloud-select, .cloud-area {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            color: white;
+            outline: none;
+        }
+
+        .cloud-input:focus { border-color: var(--cloud-blue); }
+
+        .cloud-btn {
+            background: var(--cloud-blue);
+            color: #000;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cloud-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .input-group { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER + SIDEBAR ================= -->
-<!-- BURAYA SƏNİN ÖZ HEADER + MEGAMENU HTML KODUNU AYNEN YAPIŞDIR -->
-
-<!-- ================= CLOUD HERO ================= -->
-
-<section class="cloud-hero">
-    <div>
-        <h1>Bulud Sistemləri<br>Gələcəyin İnfrastrukturudur</h1>
-        <p>
-            AWS, Azure və Google Cloud üzərində təhlükəsiz, elastik və
-            yüksək performanslı sistemlər qururuq.
+    <section class="cloud-hero">
+        <div class="hero-badge">Next-Gen Infrastructure</div>
+        <h1>Sərhədsiz <span class="highlight">Bulud</span> Gücü</h1>
+        <p style="max-width: 650px; margin: 0 auto; opacity: 0.7; font-size: 17px;">
+            Biznesinizi AWS, Azure və Google Cloud üzərində avtomatlaşdırın. 
+            Məlumatlarınızı təhlükəsiz saxlayın və 99.9% uptime ilə qlobal əlçatanlıq qazanın.
         </p>
+    </section>
 
-        <div class="cloud-tags">
-            <span>AWS</span>
-            <span>Azure</span>
-            <span>Google Cloud</span>
-            <span>DevOps</span>
-            <span>Kubernetes</span>
+    <div class="infra-grid">
+        <div class="infra-card">
+            <i class="fa-solid fa-cloud-shield"></i>
+            <h3>Təhlükəsiz Saxlama</h3>
+            <p>End-to-end şifrələmə ilə bütün korporativ datalarınızın qorunması və gündəlik avtomatik backup.</p>
         </div>
-    </div>
-
-    <div class="cloud-visual">
-        <i class="fa-solid fa-cloud"></i>
-        <h3>Enterprise Cloud Architecture</h3>
-    </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-
-<section class="cloud-services">
-    <h2>Bulud Həllərimiz</h2>
-
-    <div class="cloud-grid">
-        <div class="cloud-card">
-            <i class="fa-solid fa-server"></i>
-            <h3>Cloud Server</h3>
-            <p>Yüksək performanslı virtual serverlər.</p>
+        <div class="infra-card">
+            <i class="fa-solid fa-microchip"></i>
+            <h3>Yüksək Performans</h3>
+            <p>Dinamik miqyaslanma (Scaling) sayəsində istifadəçi yükü artdıqda sisteminiz avtomatik güclənir.</p>
         </div>
-
-        <div class="cloud-card">
+        <div class="infra-card">
             <i class="fa-solid fa-network-wired"></i>
-            <h3>Load Balancer</h3>
-            <p>Yüksək trafik üçün balanslaşdırma.</p>
+            <h3>Hybrid Cloud</h3>
+            <p>Lokal serverlərinizlə bulud sistemlərini vahid şəbəkədə birləşdirən xüsusi infrastruktur həlləri.</p>
+        </div>
+    </div>
+
+    <section class="pricing-section" style="padding: 80px 10%;">
+    <h2 class="h2e" style="text-align: center; margin-bottom: 50px;">Bulud Paketlərimiz</h2>
+    <div class="pricing-grid">
+        
+        <div class="price-card">
+            <div class="card-header">
+                <h3>Start-Up</h3>
+                <div class="price">49<span>AZN / ay</span></div>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> 10GB Bulud Sahəsi</li>
+                <li><i class="fa-solid fa-check"></i> 1 vCPU / 2GB RAM</li>
+                <li><i class="fa-solid fa-check"></i> SSL Təhlükəsizlik</li>
+                <li class="disabled"><i class="fa-solid fa-xmark"></i> 7/24 Canlı Dəstək</li>
+            </ul>
+            <button class="buy-btn" onclick="selectPlan('Start-Up')">İndi Al</button>
         </div>
 
-        <div class="cloud-card">
-            <i class="fa-solid fa-shield-halved"></i>
-            <h3>Cloud Security</h3>
-            <p>DDoS, firewall və IAM qorunması.</p>
+        <div class="price-card featured">
+            <div class="popular-badge">ƏN ÇOX SEÇİLƏN</div>
+            <div class="card-header">
+                <h3>Business Pro</h3>
+                <div class="price">149<span>AZN / ay</span></div>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> 100GB Bulud Sahəsi</li>
+                <li><i class="fa-solid fa-check"></i> 4 vCPU / 8GB RAM</li>
+                <li><i class="fa-solid fa-check"></i> Gündəlik Backup</li>
+                <li><i class="fa-solid fa-check"></i> 7/24 Prioritet Dəstək</li>
+            </ul>
+            <button class="buy-btn featured-btn" onclick="selectPlan('Business Pro')">İndi Al</button>
         </div>
 
-        <div class="cloud-card">
-            <i class="fa-solid fa-gears"></i>
-            <h3>DevOps</h3>
-            <p>CI/CD, Docker, Kubernetes.</p>
+        <div class="price-card">
+            <div class="card-header">
+                <h3>Enterprise</h3>
+                <div class="price">Xüsusi</div>
+            </div>
+            <ul>
+                <li><i class="fa-solid fa-check"></i> Limitsiz Resurs</li>
+                <li><i class="fa-solid fa-check"></i> Xüsusi Server Arxitekturası</li>
+                <li><i class="fa-solid fa-check"></i> Tam İdarə Olunan Sistem</li>
+                <li><i class="fa-solid fa-check"></i> SLA Zəmanəti</li>
+            </ul>
+            <button class="buy-btn" onclick="selectPlan('Enterprise')">Əlaqə Saxla</button>
         </div>
 
-        <div class="cloud-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>Cloud Database</h3>
-            <p>Managed SQL və NoSQL sistemləri.</p>
-        </div>
-
-        <div class="cloud-card">
-            <i class="fa-solid fa-chart-line"></i>
-            <h3>Monitoring</h3>
-            <p>Real-time izləmə və analitika.</p>
-        </div>
     </div>
 </section>
 
-<!-- ================= CTA ================= -->
+    <section class="cloud-order-container">
+        <div class="cloud-form-box">
+            <h2 style="text-align: center; margin-bottom: 30px;">İnfrastruktur Sorğusu</h2>
+            <form id="cloudOrderForm" action="https://formspree.io/f/ÖZ_KODUN" method="POST">
+                <div class="input-group">
+                    <input type="text" name="Şirkət" class="cloud-input" placeholder="Şirkət Adı" required>
+                    <input type="email" name="Email" class="cloud-input" placeholder="Korporativ Email" required>
+                </div>
+                <div class="input-group">
+                    <select name="Platform" class="cloud-select">
+                        <option value="aws">AWS (Amazon Web Services)</option>
+                        <option value="azure">Microsoft Azure</option>
+                        <option value="gcp">Google Cloud Platform</option>
+                        <option value="other">Digər / Bilmirəm</option>
+                    </select>
+                    <select name="ServiceType" class="cloud-select">
+                        <option value="migration">Buluda Köçürülmə</option>
+                        <option value="optimization">Xərclərin Optimizasiyası</option>
+                        <option value="security">Təhlükəsizlik Auditi</option>
+                    </select>
+                </div>
+                <textarea name="Mesaj" class="cloud-area" rows="5" placeholder="Mövcud infrastrukturunuz haqqında qısa məlumat..." required></textarea>
+                <button type="submit" id="cloudBtn" class="cloud-btn">Analiz İstə</button>
+            </form>
+        </div>
+    </section>
 
-<section class="cloud-cta">
-    <h2>Bulud sisteminə keçməyə hazırsan?</h2>
-    <button>Bizimlə əlaqə</button>
-</section>
-
+    <script src="app.js"></script>
+    <script>
+        // Formspree Handling (app.js-də yoxdursa bura əlavə edə bilərsən)
+        document.getElementById('cloudOrderForm')?.addEventListener('submit', function(e) {
+            const btn = document.getElementById('cloudBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Emal olunur...';
+            btn.style.opacity = '0.7';
+        });
+    </script>
 </body>
 </html>

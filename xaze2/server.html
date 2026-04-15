@@ -1,378 +1,182 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server & Hosting | Xazerbaijan Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --host-green: #00ff88;
+            --host-blue: #0062ff;
+            --bg-dark: #08080a;
+        }
 
-<title>Server / Hosting | X Azerbaijan</title>
+        body { background-color: var(--bg-dark); color: white; }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        /* Hosting Hero */
+        .host-hero {
+            padding: 160px 10% 80px;
+            text-align: center;
+            background: radial-gradient(circle at bottom, rgba(0, 255, 136, 0.05) 0%, transparent 60%);
+        }
 
-<style>
+        .host-hero h1 { font-size: clamp(35px, 5vw, 65px); font-weight: 800; margin-bottom: 20px; }
+        .green-glow { color: var(--host-green); text-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
 
-:root{
---bg:#0b0e14;
---surface:#161b22;
---accent:#7000ff;
---neon-blue:#00f2fe;
---text:#ffffff;
-}
+        /* Status Bar Simulation */
+        .status-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            margin-bottom: 30px;
+        }
+        .dot { width: 8px; height: 8px; background: var(--host-green); border-radius: 50%; animation: pulse 1.5s infinite; }
 
-body{
-background:var(--bg);
-color:var(--text);
-font-family: 'Plus Jakarta Sans', sans-serif;
-margin:0;
-}
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
-/* HERO */
+        /* Pricing Cards */
+        .hosting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 60px 10%;
+        }
 
-.hosting-hero{
-padding:160px 120px 100px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        .host-card {
+            background: linear-gradient(145deg, #111, #0a0a0c);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 40px;
+            border-radius: 25px;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
 
-.hero-title{
-font-size:52px;
-font-weight:800;
-background:linear-gradient(90deg,#00f2fe,#7000ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        .host-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--host-green);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.1);
+        }
 
-.hero-desc{
-opacity:0.6;
-max-width:420px;
-margin-top:20px;
-}
+        .host-card h3 { font-size: 26px; margin-bottom: 5px; }
+        .host-card .specs { margin: 25px 0; padding: 0; list-style: none; flex-grow: 1; }
+        .host-card .specs li { margin-bottom: 12px; opacity: 0.8; display: flex; align-items: center; gap: 10px; font-size: 15px; }
+        .host-card .specs li i { color: var(--host-green); font-size: 14px; }
 
-/* PRICING */
+        .price-tag { font-size: 32px; font-weight: 800; margin-bottom: 20px; }
+        .price-tag span { font-size: 14px; opacity: 0.5; }
 
-.pricing{
-padding:80px 120px;
-}
+        .order-btn {
+            background: var(--host-green);
+            color: #000;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
 
-.section-title{
-font-size:34px;
-font-weight:800;
-margin-bottom:50px;
-}
+        .order-btn:hover { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); transform: scale(1.02); }
 
-.pricing-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.price-card{
-background:var(--surface);
-padding:40px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.4s;
-}
-
-.price-card:hover{
-transform:translateY(-10px);
-border-color:var(--accent);
-box-shadow:0 15px 40px rgba(112,0,255,0.2);
-}
-
-.price-title{
-font-size:18px;
-color:var(--neon-blue);
-margin-bottom:15px;
-}
-
-.price{
-font-size:38px;
-font-weight:800;
-margin-bottom:20px;
-}
-
-.price small{
-font-size:14px;
-opacity:0.5;
-}
-
-.feature{
-opacity:0.7;
-margin-bottom:8px;
-font-size:14px;
-}
-
-.buy-btn{
-margin-top:20px;
-background:var(--accent);
-border:none;
-padding:12px 20px;
-border-radius:10px;
-color:white;
-font-weight:700;
-cursor:pointer;
-}
-
-/* FEATURES */
-
-.features{
-padding:80px 120px;
-}
-
-.feature-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.feature-box{
-background:var(--surface);
-padding:30px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.feature-box i{
-font-size:22px;
-color:var(--accent);
-margin-bottom:10px;
-}
-
-/* DATACENTER */
-
-.datacenter{
-padding:80px 120px;
-}
-
-.dc-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.dc-card{
-background:var(--surface);
-padding:25px;
-border-radius:20px;
-text-align:center;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-/* FAQ */
-
-.faq{
-padding:80px 120px;
-}
-
-.faq-item{
-background:var(--surface);
-padding:20px;
-border-radius:15px;
-margin-bottom:15px;
-cursor:pointer;
-}
-
-.faq-answer{
-display:none;
-opacity:0.7;
-margin-top:10px;
-font-size:14px;
-}
-
-</style>
+        /* Features Section */
+        .host-features {
+            background: rgba(255,255,255,0.02);
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        .feat-item i { font-size: 35px; color: var(--host-green); margin-bottom: 20px; }
+    </style>
 </head>
-
 <body>
 
-<section class="hosting-hero">
+    <section class="host-hero">
+        <div class="status-container">
+            <div class="dot"></div>
+            <span style="font-size: 12px; letter-spacing: 1px;">SİSTEM STATUSU: 99.9% ONLINE</span>
+        </div>
+        <h1>Maksimum Sürət, <br><span class="green-glow">Kəsintisiz Hosting</span></h1>
+        <p style="max-width: 600px; margin: 0 auto; opacity: 0.6;">
+            Azərbaycan və Avropa lokallı NVMe SSD serverlərimizlə veb saytınızın sürətini 10 qat artırın. 
+            DDoS qoruması və pulsuz SSL daxildir.
+        </p>
+    </section>
 
-<div>
+    <div class="hosting-grid">
+        <div class="host-card">
+            <h3>SSD Hosting</h3>
+            <p style="color: var(--host-green);">Kiçik layihələr üçün</p>
+            <div class="price-tag">9.90 <span>AZN / ay</span></div>
+            <ul class="specs">
+                <li><i class="fa-solid fa-hard-drive"></i> 5 GB NVMe SSD</li>
+                <li><i class="fa-solid fa-globe"></i> 1 Domen dəstəyi</li>
+                <li><i class="fa-solid fa-envelope"></i> 10 Email hesabı</li>
+                <li><i class="fa-solid fa-lock"></i> Pulsuz SSL Sertifikatı</li>
+            </ul>
+            <a href="#order" class="order-btn" onclick="setHostPlan('SSD Hosting')">Sifariş Et</a>
+        </div>
 
-<h1 class="hero-title">
-Server & Hosting
-</h1>
+        <div class="host-card" style="border-color: var(--host-green); background: rgba(0, 255, 136, 0.03);">
+            <h3>Pro Cloud</h3>
+            <p style="color: var(--host-green);">Biznes saytlar üçün</p>
+            <div class="price-tag">24.90 <span>AZN / ay</span></div>
+            <ul class="specs">
+                <li><i class="fa-solid fa-hard-drive"></i> 20 GB NVMe SSD</li>
+                <li><i class="fa-solid fa-globe"></i> 5 Domen dəstəyi</li>
+                <li><i class="fa-solid fa-microchip"></i> Litespeed + LSCache</li>
+                <li><i class="fa-solid fa-shield-virus"></i> Gündəlik Yedəkləmə</li>
+            </ul>
+            <a href="#order" class="order-btn" onclick="setHostPlan('Pro Cloud')">Sifariş Et</a>
+        </div>
 
-<p class="hero-desc">
-Yüksək performanslı cloud serverlər, təhlükəsiz hosting və 
-global datacenter infrastrukturu ilə layihələrinizi gücləndirin.
-</p>
+        <div class="host-card">
+            <h3>Dedicated VDS</h3>
+            <p style="color: var(--host-green);">Yüksək performans</p>
+            <div class="price-tag">55.00 <span>AZN-dən</span></div>
+            <ul class="specs">
+                <li><i class="fa-solid fa-cpu"></i> 4 Core İşlemci</li>
+                <li><i class="fa-solid fa-memory"></i> 8 GB RAM</li>
+                <li><i class="fa-solid fa-network-wired"></i> 1 Gbps Şəbəkə</li>
+                <li><i class="fa-solid fa-user-gear"></i> Root Girişi (SSH)</li>
+            </ul>
+            <a href="#order" class="order-btn" onclick="setHostPlan('Dedicated VDS')">Sifariş Et</a>
+        </div>
+    </div>
 
-</div>
+    <section class="host-features">
+        <div class="feat-item">
+            <i class="fa-solid fa-bolt"></i>
+            <h4>Ultra Sürət</h4>
+            <p style="font-size: 13px; opacity: 0.6;">Litespeed server texnologiyası</p>
+        </div>
+        <div class="feat-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>DDoS Qoruma</h4>
+            <p style="font-size: 13px; opacity: 0.6;">Layer 7 hücumlarına qarşı</p>
+        </div>
+        <div class="feat-item">
+            <i class="fa-solid fa-headset"></i>
+            <h4>7/24 Dəstək</h4>
+            <p style="font-size: 13px; opacity: 0.6;">Hər an yanınızdayıq</p>
+        </div>
+    </section>
 
-<i class="fa-solid fa-server" style="font-size:120px;color:#7000ff;"></i>
-
-</section>
-
-
-<section class="pricing">
-
-<h2 class="section-title">
-Hosting Paketləri
-</h2>
-
-<div class="pricing-grid">
-
-<div class="price-card">
-
-<div class="price-title">Starter VPS</div>
-
-<div class="price">
-$9 <small>/ay</small>
-</div>
-
-<div class="feature">1 CPU Core</div>
-<div class="feature">2GB RAM</div>
-<div class="feature">40GB SSD</div>
-<div class="feature">1TB Trafik</div>
-
-<button class="buy-btn">
-Sifariş et
-</button>
-
-</div>
-
-
-<div class="price-card">
-
-<div class="price-title">Business VPS</div>
-
-<div class="price">
-$29 <small>/ay</small>
-</div>
-
-<div class="feature">4 CPU Core</div>
-<div class="feature">8GB RAM</div>
-<div class="feature">120GB NVMe</div>
-<div class="feature">5TB Trafik</div>
-
-<button class="buy-btn">
-Sifariş et
-</button>
-
-</div>
-
-
-<div class="price-card">
-
-<div class="price-title">Enterprise Cloud</div>
-
-<div class="price">
-$99 <small>/ay</small>
-</div>
-
-<div class="feature">16 CPU</div>
-<div class="feature">32GB RAM</div>
-<div class="feature">500GB NVMe</div>
-<div class="feature">Unlimited Trafik</div>
-
-<button class="buy-btn">
-Sifariş et
-</button>
-
-</div>
-
-</div>
-</section>
-
-
-<section class="features">
-
-<h2 class="section-title">
-Hosting üstünlükləri
-</h2>
-
-<div class="feature-grid">
-
-<div class="feature-box">
-<i class="fa-solid fa-bolt"></i>
-<h3>Ultra sürətli NVMe</h3>
-<p>Yüksək performanslı disk infrastrukturu</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-shield-halved"></i>
-<h3>DDoS qoruma</h3>
-<p>Layer 3 və Layer 7 müdafiə sistemi</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-globe"></i>
-<h3>Global şəbəkə</h3>
-<p>Avropa və Asiya datacenterləri</p>
-</div>
-
-<div class="feature-box">
-<i class="fa-solid fa-headset"></i>
-<h3>24/7 Support</h3>
-<p>Texniki dəstək komandası</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="datacenter">
-
-<h2 class="section-title">
-Datacenter yerləri
-</h2>
-
-<div class="dc-grid">
-
-<div class="dc-card">🇦🇿 Bakı</div>
-<div class="dc-card">🇩🇪 Frankfurt</div>
-<div class="dc-card">🇳🇱 Amsterdam</div>
-<div class="dc-card">🇸🇬 Singapore</div>
-
-</div>
-
-</section>
-
-
-<section class="faq">
-
-<h2 class="section-title">
-FAQ
-</h2>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-Server neçə dəqiqəyə aktiv olur?
-<div class="faq-answer">
-Serverlər avtomatik olaraq 1-2 dəqiqə ərzində aktivləşdirilir.
-</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-Root access varmı?
-<div class="faq-answer">
-Bəli bütün VPS serverlərdə tam root access verilir.
-</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-Backup varmı?
-<div class="faq-answer">
-Gündəlik snapshot backup sistemi mövcuddur.
-</div>
-</div>
-
-</section>
-
-
-<script>
-
-function toggleFaq(el){
-
-const ans = el.querySelector(".faq-answer")
-
-ans.style.display =
-ans.style.display === "block" ? "none" : "block"
-
-}
-
-</script>
-
+    <script src="app.js"></script>
+    <script>
+        function setHostPlan(plan) {
+            alert(plan + " seçildi. Sifariş formuna yönləndirilirsiniz...");
+            // Burada formspree formuna skrol edib inputu dolduran kod ola bilər
+        }
+    </script>
 </body>
 </html>

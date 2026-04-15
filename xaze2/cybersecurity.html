@@ -1,438 +1,207 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibertəhlükəsizlik | Xazerbaijan Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --security-red: #ff003c;
+            --deep-red: rgba(255, 0, 60, 0.1);
+            --dark-gray: #0c0c0e;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body { background-color: #050506; color: white; }
 
-<title>Cyber Security | X Azerbaijan</title>
+        /* Cyber Hero Section */
+        .cyber-hero {
+            padding: 180px 10% 100px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--deep-red) 0%, transparent 70%);
+            position: relative;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        .cyber-hero h1 {
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
 
-<style>
+        .red-glow {
+            color: var(--security-red);
+            text-shadow: 0 0 20px rgba(255, 0, 60, 0.5);
+        }
 
-:root{
---bg:#0b0e14;
---surface:#161b22;
---accent:#7000ff;
---neon:#00f2fe;
---danger:#ff4d4d;
---safe:#00ff8c;
-}
+        /* Scan Line Animation */
+        .scan-line {
+            width: 100%;
+            height: 2px;
+            background: var(--security-red);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            box-shadow: 0 0 15px var(--security-red);
+            animation: scanning 4s linear infinite;
+        }
 
-body{
-background:var(--bg);
-color:white;
-font-family: 'Plus Jakarta Sans', sans-serif;
-margin:0;
-}
+        @keyframes scanning {
+            0% { top: 0%; }
+            100% { top: 100%; }
+        }
 
-/* HERO */
+        /* Services Grid */
+        .cyber-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 80px 10%;
+        }
 
-.cyber-hero{
-padding:160px 120px 120px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        .cyber-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 0, 60, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            transition: 0.3s;
+            overflow: hidden;
+        }
 
-.cyber-title{
-font-size:50px;
-font-weight:800;
-background:linear-gradient(90deg,#ff004c,#7000ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; width: 0; height: 3px;
+            background: var(--security-red);
+            transition: 0.4s;
+        }
 
-.cyber-desc{
-opacity:0.6;
-margin-top:20px;
-max-width:420px;
-}
+        .cyber-card:hover {
+            background: rgba(255, 0, 60, 0.03);
+            border-color: var(--security-red);
+            transform: translateY(-5px);
+        }
 
-/* SERVICES */
+        .cyber-card:hover::before { width: 100%; }
 
-.services{
-padding:80px 120px;
-}
+        .cyber-card i {
+            font-size: 40px;
+            color: var(--security-red);
+            margin-bottom: 25px;
+        }
 
-.section-title{
-font-size:34px;
-font-weight:800;
-margin-bottom:50px;
-}
+        /* Audit Section */
+        .audit-box {
+            margin: 50px 10%;
+            padding: 60px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #0f0f11, #050506);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
 
-.service-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
+        .audit-form {
+            background: rgba(255, 0, 60, 0.02);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px dashed rgba(255, 0, 60, 0.2);
+        }
 
-.service-card{
-background:var(--surface);
-padding:35px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.3s;
-}
+        .cyber-input {
+            width: 100%;
+            padding: 15px;
+            background: #111;
+            border: 1px solid #222;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-.service-card:hover{
-border-color:var(--accent);
-transform:translateY(-8px);
-box-shadow:0 10px 30px rgba(112,0,255,0.2);
-}
+        .cyber-input:focus {
+            border-color: var(--security-red);
+            outline: none;
+        }
 
-.service-card i{
-font-size:24px;
-color:var(--accent);
-margin-bottom:10px;
-}
+        .cyber-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--security-red);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
 
-/* THREAT DASHBOARD */
-
-.dashboard{
-padding:80px 120px;
-}
-
-.threat-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-}
-
-.threat-card{
-background:var(--surface);
-padding:30px;
-border-radius:20px;
-text-align:center;
-}
-
-.threat-value{
-font-size:40px;
-font-weight:800;
-margin-top:10px;
-}
-
-/* SCANNER */
-
-.scanner{
-padding:80px 120px;
-}
-
-.scan-box{
-background:var(--surface);
-padding:40px;
-border-radius:25px;
-max-width:700px;
-margin:auto;
-text-align:center;
-}
-
-.scan-input{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid #333;
-background:#0b0e14;
-color:white;
-margin-top:15px;
-}
-
-.scan-btn{
-margin-top:15px;
-padding:12px 25px;
-border:none;
-background:var(--accent);
-color:white;
-border-radius:10px;
-font-weight:700;
-cursor:pointer;
-}
-
-.scan-result{
-margin-top:20px;
-font-size:18px;
-font-weight:700;
-}
-
-/* SECURITY LEVEL */
-
-.level{
-padding:80px 120px;
-}
-
-.level-bar{
-background:#1c212a;
-height:20px;
-border-radius:20px;
-overflow:hidden;
-margin-top:20px;
-}
-
-.level-fill{
-height:100%;
-width:65%;
-background:linear-gradient(90deg,#ff004c,#7000ff);
-}
-
-/* FAQ */
-
-.faq{
-padding:80px 120px;
-}
-
-.faq-item{
-background:var(--surface);
-padding:20px;
-border-radius:15px;
-margin-bottom:15px;
-cursor:pointer;
-}
-
-.faq-answer{
-display:none;
-opacity:0.7;
-margin-top:10px;
-font-size:14px;
-}
-
-</style>
-
+        @media (max-width: 992px) {
+            .audit-box { grid-template-columns: 1fr; padding: 30px; }
+        }
+    </style>
 </head>
-
 <body>
-
-<section class="cyber-hero">
-
-<div>
-
-<h1 class="cyber-title">
-Cyber Security
-</h1>
-
-<p class="cyber-desc">
-Rəqəmsal sistemlərinizi hücumlardan qorumaq üçün 
-professional kibertəhlükəsizlik xidmətləri təqdim edirik.
-</p>
-
-</div>
-
-<i class="fa-solid fa-shield-halved" style="font-size:120px;color:#7000ff;"></i>
-
-</section>
-
-
-<section class="services">
-
-<h2 class="section-title">
-Təhlükəsizlik xidmətləri
-</h2>
-
-<div class="service-grid">
-
-<div class="service-card">
-<i class="fa-solid fa-user-secret"></i>
-<h3>Penetration Test</h3>
-<p>Sistemlərdə təhlükəsizlik boşluqlarının test edilməsi</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-bug"></i>
-<h3>Vulnerability Scan</h3>
-<p>Avtomatik zəiflik aşkarlama sistemi</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-network-wired"></i>
-<h3>Network Security</h3>
-<p>Firewall və trafik monitorinqi</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-lock"></i>
-<h3>Data Protection</h3>
-<p>Məlumat şifrələmə və qoruma</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="dashboard">
-
-<h2 class="section-title">
-Threat Monitor
-</h2>
-
-<div class="threat-grid">
-
-<div class="threat-card">
-<i class="fa-solid fa-shield"></i>
-<div class="threat-value" id="blocked">0</div>
-<p>Bloklanan hücumlar</p>
-</div>
-
-<div class="threat-card">
-<i class="fa-solid fa-bug"></i>
-<div class="threat-value" id="malware">0</div>
-<p>Malware aşkarlanıb</p>
-</div>
-
-<div class="threat-card">
-<i class="fa-solid fa-user-secret"></i>
-<div class="threat-value" id="intrusion">0</div>
-<p>İcazəsiz giriş</p>
-</div>
-
-<div class="threat-card">
-<i class="fa-solid fa-network-wired"></i>
-<div class="threat-value" id="traffic">0</div>
-<p>Şəbəkə hücumu</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="scanner">
-
-<h2 class="section-title">
-Website Security Scan
-</h2>
-
-<div class="scan-box">
-
-<input
-class="scan-input"
-id="scanInput"
-placeholder="website.com yazın">
-
-<button class="scan-btn" onclick="scanSite()">
-Scan et
-</button>
-
-<div class="scan-result" id="scanResult"></div>
-
-</div>
-
-</section>
-
-
-<section class="level">
-
-<h2 class="section-title">
-Sistem təhlükəsizlik səviyyəsi
-</h2>
-
-<div class="level-bar">
-<div class="level-fill" id="securityLevel"></div>
-</div>
-
-</section>
-
-
-<section class="faq">
-
-<h2 class="section-title">
-FAQ
-</h2>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-Penetration test nədir?
-<div class="faq-answer">
-Sistemə real hücum simulyasiya edilərək boşluqlar aşkar edilir.
-</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-Firewall nə edir?
-<div class="faq-answer">
-Firewall şəbəkəyə gələn və gedən trafiki filtr edir.
-</div>
-</div>
-
-<div class="faq-item" onclick="toggleFaq(this)">
-DDoS qoruması varmı?
-<div class="faq-answer">
-Bəli sistemimiz Layer 3 və Layer 7 hücumlarını bloklayır.
-</div>
-</div>
-
-</section>
-
-
-<script>
-
-/* threat dashboard random */
-
-function updateThreats(){
-
-document.getElementById("blocked").innerText =
-Math.floor(Math.random()*9000)
-
-document.getElementById("malware").innerText =
-Math.floor(Math.random()*300)
-
-document.getElementById("intrusion").innerText =
-Math.floor(Math.random()*200)
-
-document.getElementById("traffic").innerText =
-Math.floor(Math.random()*500)
-
-}
-
-setInterval(updateThreats,2000)
-
-updateThreats()
-
-
-/* scan */
-
-function scanSite(){
-
-const site=document.getElementById("scanInput").value
-
-if(site==="") return
-
-const result=document.getElementById("scanResult")
-
-result.innerHTML="Scanning..."
-
-setTimeout(()=>{
-
-const safe=Math.random()>0.3
-
-if(safe){
-
-result.innerHTML="✔ Sistem təhlükəsizdir"
-result.style.color="#00ff8c"
-
-}else{
-
-result.innerHTML="⚠ Təhlükəsizlik riskləri tapıldı"
-result.style.color="#ff4d4d"
-
-}
-
-},2000)
-
-}
-
-
-/* faq */
-
-function toggleFaq(el){
-
-const ans=el.querySelector(".faq-answer")
-
-ans.style.display =
-ans.style.display==="block" ? "none":"block"
-
-}
-
-</script>
-
+    <div class="scan-line"></div>
+
+    <section class="cyber-hero">
+        <h1 class="h2e" style="font-size: 14px; color: var(--security-red); margin-bottom: 20px;">[ SİSTEM TƏHLÜKƏSİZLİYİ AUDİTİ ]</h1>
+        <h1>Rəqəmsal Aktivlərinizi <br><span class="red-glow">Zirehləyin</span></h1>
+        <p style="max-width: 700px; margin: 20px auto; opacity: 0.6; line-height: 1.8;">
+            Kiber hücumlar hər saniyə baş verir. Biz sizin infrastrukturunuzu "Penetration Testing" və real zamanlı monitorinq sistemləri ilə qoruyuruq.
+        </p>
+    </section>
+
+    <div class="cyber-grid">
+        <div class="cyber-card">
+            <i class="fa-solid fa-user-secret"></i>
+            <h3>Penetration Testing</h3>
+            <p>Sisteminizdəki boşluqları hakerlərdən öncə biz tapırıq. Professional sızma testləri ilə zəif nöqtələrinizi bağlayın.</p>
+        </div>
+        <div class="cyber-card">
+            <i class="fa-solid fa-shield-virus"></i>
+            <h3>Endpoint Protection</h3>
+            <p>Bütün korporativ cihazların (PC, Mobil, Server) ransomware və viruslara qarşı mərkəzləşdirilmiş qorunması.</p>
+        </div>
+        <div class="cyber-card">
+            <i class="fa-solid fa-file-shield"></i>
+            <h3>Data Encryption</h3>
+            <p>Məxfi məlumatlarınızın və müştəri bazanızın hərbi səviyyəli şifrələmə üsulları ilə qorunması.</p>
+        </div>
+    </div>
+
+    <section class="audit-box">
+        <div>
+            <h2 style="font-size: 32px; margin-bottom: 20px;">Təhlükəsizlik Auditi İstəyin</h2>
+            <p style="opacity: 0.6; margin-bottom: 20px;">
+                Mövcud sisteminizin nə dərəcədə təhlükəsiz olduğunu öyrənmək üçün müraciət edin. Biz sizə ətraflı hesabat və həll yolu təqdim edəcəyik.
+            </p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--security-red); margin-right: 10px;"></i> OWASP Top 10 Analizi</li>
+                <li style="margin-bottom: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--security-red); margin-right: 10px;"></i> Network Vulnerability Scan</li>
+            </ul>
+        </div>
+        <div class="audit-form">
+            <form action="https://formspree.io/f/ÖZ_KODUN" method="POST">
+                <input type="text" name="name" class="cyber-input" placeholder="Ad və ya Şirkət" required>
+                <input type="email" name="email" class="cyber-input" placeholder="Təhlükəsizlik üzrə əlaqə emaili" required>
+                <select name="type" class="cyber-input">
+                    <option value="audit">Ümumi Audit</option>
+                    <option value="pentest">Pentest (Sızma Testi)</option>
+                    <option value="incident">Təhlükəsizlik İnsidenti (Təcili)</option>
+                </select>
+                <textarea name="message" class="cyber-input" rows="4" placeholder="Sisteminiz haqqında qısa məlumat..."></textarea>
+                <button type="submit" class="cyber-btn">Analizi Başlat</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
 </body>
 </html>

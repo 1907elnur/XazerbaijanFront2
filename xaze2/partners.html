@@ -1,394 +1,161 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnyorlar | Xazerbaijan Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --p-blue: #00f2fe;
+            --p-purple: #7000ff;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body { background-color: #050507; color: #fff; }
 
-<title>Partnyorlarımız</title>
+        /* Header Section */
+        .partners-hero {
+            padding: 180px 10% 60px;
+            text-align: center;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        .partners-hero h1 { font-size: 50px; font-weight: 800; margin-bottom: 20px; }
+        .partners-hero p { opacity: 0.6; max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
-<style>
+        /* Logo Marquee (Sonsuz axın effekti) */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 60px 0;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin-top: 40px;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
 
-body{
-background:#0b0e14;
-color:white;
-overflow-x:hidden;
-}
+        .marquee-content i, .marquee-content span {
+            font-size: 30px;
+            margin: 0 50px;
+            opacity: 0.4;
+            transition: 0.3s;
+            color: #fff;
+            font-weight: 700;
+        }
 
-/* HEADER */
+        .marquee-content i:hover, .marquee-content span:hover { opacity: 1; color: var(--p-blue); }
 
-header{
-width:100%;
-padding:20px 80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:#0f1218;
-border-bottom:1px solid rgba(255,255,255,0.05);
-position:sticky;
-top:0;
-z-index:1000;
-}
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
 
-.logo{
-font-size:24px;
-font-weight:800;
-color:#7000ff;
-}
+        /* Partners Categories */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 100px 10%;
+        }
 
-nav{
-display:flex;
-gap:35px;
-align-items:center;
-}
+        .partner-type-card {
+            background: linear-gradient(145deg, #0a0a0c, #111);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
 
-nav a{
-text-decoration:none;
-color:white;
-opacity:0.7;
-font-size:14px;
-transition:0.3s;
-}
+        .partner-type-card i {
+            font-size: 40px;
+            background: linear-gradient(90deg, var(--p-blue), var(--p-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+        }
 
-nav a:hover{
-opacity:1;
-color:#7000ff;
-}
+        .partner-type-card h3 { margin-bottom: 15px; font-size: 22px; }
+        .partner-type-card p { font-size: 14px; opacity: 0.5; line-height: 1.7; }
 
-.login-btn{
-background:#7000ff;
-padding:8px 18px;
-border-radius:20px;
-}
+        /* Join Network */
+        .join-network {
+            margin: 50px 10% 100px;
+            padding: 80px;
+            border-radius: 40px;
+            background: radial-gradient(circle at center, rgba(112, 0, 255, 0.1), transparent);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
 
-/* HERO */
+        .join-btn {
+            background: #fff;
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
 
-.hero{
-text-align:center;
-padding:100px 20px 50px;
-}
-
-.hero h1{
-font-size:48px;
-font-weight:800;
-background:linear-gradient(90deg,#00f2fe,#7000ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.hero p{
-margin-top:15px;
-opacity:0.6;
-}
-
-/* FILTER */
-
-.filter{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.filter button{
-background:#161b22;
-border:1px solid rgba(255,255,255,0.1);
-color:white;
-padding:10px 20px;
-border-radius:30px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.filter button:hover{
-border-color:#7000ff;
-}
-
-.filter button.active{
-background:#7000ff;
-}
-
-/* PARTNERS */
-
-.partners{
-padding:60px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-max-width:1200px;
-margin:auto;
-}
-
-.card{
-background:#161b22;
-padding:35px 25px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,0.05);
-text-align:center;
-transition:0.35s;
-cursor:pointer;
-}
-
-.card img{
-height:40px;
-margin-bottom:20px;
-filter:grayscale(1);
-opacity:0.6;
-transition:0.3s;
-}
-
-.card h3{
-margin-bottom:8px;
-}
-
-.card p{
-font-size:13px;
-opacity:0.6;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#7000ff;
-box-shadow:0 10px 40px rgba(112,0,255,0.2);
-}
-
-.card:hover img{
-filter:none;
-opacity:1;
-transform:scale(1.1);
-}
-
-/* FOOTER */
-
-footer{
-background:#0f1218;
-margin-top:100px;
-padding:60px 80px;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr;
-gap:40px;
-}
-
-.footer-brand h2{
-font-size:22px;
-margin-bottom:15px;
-}
-
-.footer-col h4{
-margin-bottom:15px;
-opacity:0.8;
-}
-
-.footer-col ul{
-list-style:none;
-}
-
-.footer-col li{
-margin-bottom:8px;
-opacity:0.6;
-font-size:14px;
-}
-
-.footer-col li:hover{
-opacity:1;
-cursor:pointer;
-}
-
-.footer-bottom{
-border-top:1px solid rgba(255,255,255,0.05);
-margin-top:40px;
-padding-top:20px;
-text-align:center;
-font-size:13px;
-opacity:0.6;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-header{
-padding:20px;
-}
-
-.hero h1{
-font-size:34px;
-}
-
-.partners{
-padding:40px 20px;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
-
+        .join-btn:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,255,255,0.2); }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <section class="partners-hero">
+        <h1>Qlobal <span style="color: var(--p-blue);">Ekosistemimiz</span></h1>
+        <p>Dünyanın aparıcı texnologiya nəhəngləri və yerli innovasiya mərkəzləri ilə çiyin-çiyinə çalışaraq ən yaxşı həlləri təqdim edirik.</p>
+    </section>
 
-<div class="logo">Xazerbaijan</div>
+    <div class="marquee">
+        <div class="marquee-content">
+            <span><i class="fab fa-aws"></i> AWS</span>
+            <span><i class="fab fa-google"></i> Google Cloud</span>
+            <span><i class="fab fa-microsoft"></i> Azure</span>
+            <span><i class="fab fa-digital-ocean"></i> DigitalOcean</span>
+            <span><i class="fab fa-cloudflare"></i> Cloudflare</span>
+            <span><i class="fab fa-github"></i> GitHub</span>
+            <span><i class="fab fa-aws"></i> AWS</span>
+            <span><i class="fab fa-google"></i> Google Cloud</span>
+            <span><i class="fab fa-microsoft"></i> Azure</span>
+            <span><i class="fab fa-digital-ocean"></i> DigitalOcean</span>
+            <span><i class="fab fa-cloudflare"></i> Cloudflare</span>
+            <span><i class="fab fa-github"></i> GitHub</span>
+        </div>
+    </div>
 
-<nav>
-<a href="#">Ana səhifə</a>
-<a href="#">Xidmətlər</a>
-<a href="#">Haqqımızda</a>
-<a href="#">Partnyorlar</a>
-<a href="#" class="login-btn">Giriş</a>
-</nav>
+    <div class="partners-grid">
+        <div class="partner-type-card">
+            <i class="fa-solid fa-handshake-angle"></i>
+            <h3>Texnoloji Partnyorlar</h3>
+            <p>İnfrastruktur səviyyəsində əməkdaşlıq etdiyimiz dünya nəhəngləri sayəsində layihələriniz hər zaman stabil qalır.</p>
+        </div>
+        <div class="partner-type-card">
+            <i class="fa-solid fa-building-shield"></i>
+            <h3>Korporativ Müştərilər</h3>
+            <p>Biznes proseslərini bizə etibar edən yerli və xarici holdinqlər üçün özəl həllər hazırlayırıq.</p>
+        </div>
+        <div class="partner-type-card">
+            <i class="fa-solid fa-users-gear"></i>
+            <h3>İnteqrasiya Həlləri</h3>
+            <p>CRM, ERP və ödəniş sistemləri (PashaBank, Kapital Bank) üzrə rəsmi inteqrasiya dəstəyi.</p>
+        </div>
+    </div>
 
-</header>
+    <section class="join-network">
+        <h2>Bizim Partnyorumuz Olun</h2>
+        <p style="opacity: 0.6; margin-top: 15px;">Yeni texnoloji imkanlar yaratmaq və ekosistemimizi birlikdə böyütmək üçün əməkdaşlığa hazırıq.</p>
+        <a href="contact.html" class="join-btn">Müraciət Et</a>
+    </section>
 
-<section class="hero">
-
-<h1>Partnyorlarımız</h1>
-
-<p>Texnoloji ekosistemimizi birlikdə qurduğumuz şirkətlər</p>
-
-<div class="filter">
-
-<button class="active" data-filter="all">Hamısı</button>
-<button data-filter="cloud">Cloud</button>
-<button data-filter="ai">AI</button>
-<button data-filter="software">Software</button>
-
-</div>
-
-</section>
-
-<section class="partners">
-
-<div class="card" data-type="software">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
-<h3>Microsoft</h3>
-<p>Enterprise və bulud həlləri</p>
-</div>
-
-<div class="card" data-type="software">
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
-<h3>Google</h3>
-<p>AI və data infrastrukturu</p>
-</div>
-
-<div class="card" data-type="ai">
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png">
-<h3>Tesla AI</h3>
-<p>Süni intellekt texnologiyaları</p>
-</div>
-
-<div class="card" data-type="cloud">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
-<h3>IBM</h3>
-<p>Cloud və quantum computing</p>
-</div>
-
-<div class="card" data-type="cloud">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg">
-<h3>Salesforce</h3>
-<p>CRM və bulud platforması</p>
-</div>
-
-<div class="card" data-type="software">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Android_logo_2019_%28stacked%29.svg">
-<h3>Android</h3>
-<p>Mobil texnologiya platforması</p>
-</div>
-
-</section>
-
-<footer>
-
-<div class="footer-grid">
-
-<div class="footer-brand">
-<h2>Azərbaycanın rəqəmsal gələcəyini qururuq</h2>
-<p>Texnologiya, innovasiya və rəqəmsal inkişaf üçün çalışırıq.</p>
-</div>
-
-<div class="footer-col">
-<h4>Haqqımızda</h4>
-<ul>
-<li>Agentlik</li>
-<li>Missiya</li>
-<li>Komanda</li>
-</ul>
-</div>
-
-<div class="footer-col">
-<h4>Xidmətlər</h4>
-<ul>
-<li>Cloud</li>
-<li>Server</li>
-<li>Kibertəhlükəsizlik</li>
-</ul>
-</div>
-
-<div class="footer-col">
-<h4>Media</h4>
-<ul>
-<li>Xəbərlər</li>
-<li>Bloq</li>
-<li>Vakansiyalar</li>
-</ul>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-2026 © Digital Azerbaijan — Bütün hüquqlar qorunur
-</div>
-
-</footer>
-
-<script>
-
-const buttons=document.querySelectorAll(".filter button")
-const cards=document.querySelectorAll(".card")
-
-buttons.forEach(btn=>{
-
-btn.onclick=()=>{
-
-buttons.forEach(b=>b.classList.remove("active"))
-btn.classList.add("active")
-
-let filter=btn.dataset.filter
-
-cards.forEach(card=>{
-
-if(filter==="all" || card.dataset.type===filter){
-card.style.display="block"
-}else{
-card.style.display="none"
-}
-
-})
-
-}
-
-})
-
-</script>
-
+    <script src="app.js"></script>
 </body>
 </html>

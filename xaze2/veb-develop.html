@@ -1,818 +1,238 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Development | Digital Azerbaijan</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-    --bg:#0b0e14; --surface:#161b22; --text:#ffffff; --accent:#7000ff;
-    --header-bg:#ffffff; --header-text:#1a1a1a; --neon-blue:#00f2fe;
-}* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--bg); color: var(--text); overflow-x: hidden; }
-
-        /* --- HEADER --- */
-        .header-wrapper { position: fixed; top: 20px; left: 233px; right: 25px; z-index: 2000; }
-        .site-header {
-            width: 100%; max-width: 1400px; height: 75px; background: var(--header-bg);
-            border-radius: 50px; display: flex; align-items: center; padding: 0 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); position: relative;
-            overflow: visible;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veb İnkişaf | Xazerbaijan Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --glow: #7000ff;
+            --cyan: #00f2fe;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
         }
-        .brand-block { display: flex; align-items: center; gap: 15px; flex-shrink: 0; color: var(--header-text); text-decoration: none; }
-        
-        /* Naviqasiya qrupu */
-        .nav-content { display: flex; align-items: center; flex: 1; margin-left: 40px; justify-content: space-between; }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--header-text); font-size: 12px; font-weight: 700; text-transform: uppercase; }
 
-        /* Axtarış düyməsi */
-        .search-trigger { cursor: pointer; color: var(--header-text); font-size: 18px; transition: 0.3s; margin-left: 20px; }
-        .search-trigger:hover { color: var(--accent); }
+        body {
+            background-color: #0a0a0c;
+            overflow-x: hidden;
+        }
 
-        /* Axtarış Qatı (Overlay) */
-        .search-overlay {
-            display: none;
-            align-items: center;
-            flex: 1;
-            margin-left: 40px;
+        /* Hero Section */
+        .dev-hero {
+            padding: 180px 10% 100px;
+            text-align: center;
             position: relative;
-            animation: slideIn 0.3s ease-out;
         }
-        .search-overlay input {
-            width: 100%;
-            height: 45px;
-            background: #f1f3f6;
-            border: 2px solid var(--accent);
-            border-radius: 25px;
-            padding: 0 45px 0 20px;
-            outline: none;
-            font-weight: 600;
-        }
-        .close-search {
+
+        .dev-hero::before {
+            content: '';
             position: absolute;
-            right: 15px;
-            cursor: pointer;
-            color: var(--header-text);
-            font-size: 20px;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 300px;
+            background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .dev-hero h1 {
+            font-size: clamp(40px, 6vw, 70px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--cyan), var(--glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Tech Stack Section */
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .tag {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            color: var(--cyan);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Glass Cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 80px 10%;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            position: relative;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--cyan);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .glass-card i {
+            font-size: 45px;
+            margin-bottom: 25px;
+            display: block;
+            color: var(--cyan);
+        }
+
+        .glass-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .glass-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Special Form Design */
+        .contact-container {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .form-wrapper {
+            background: #111114;
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+        }
+
+        .custom-input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: #fff;
+            margin-bottom: 20px;
+            outline: none;
             transition: 0.3s;
         }
-        .close-search:hover { color: var(--accent); }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
+        .custom-input:focus {
+            border-color: var(--glow);
+            background: rgba(112, 0, 255, 0.05);
         }
 
-/* --- LEFT SIDEBAR --- */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 100vh;
-    background: #161b22;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 0;
-    z-index: 2500;
-    border-right: 1px solid rgba(255,255,255,0.08);
-}
+        .submit-glow {
+            width: 100%;
+            padding: 18px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, #00f2fe, #7000ff);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.sidebar .logo {
-    font-size: 26px;
-    font-weight: 800;
-    color: var(--accent);
-    margin-bottom: 50px;
-}
+        .submit-glow:hover {
+            box-shadow: 0 0 25px rgba(112, 0, 255, 0.5);
+            transform: scale(1.02);
+        }
 
-.sidebar ul {
-    list-style: none;
-    width: 100%;
-}
-
-.sidebar .nav-item {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-}
-
-.sidebar .nav-item i {
-    font-size: 22px;
-    color: rgba(255,255,255,0.6);
-    transition: 0.3s;
-}
-
-.sidebar .nav-item:hover i {
-    color: var(--accent);
-}
-
-
-.nav-item {
-    position: relative;
-}
-
-.nav-item > a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.dropdown {
-    position: absolute;
-    top: 130%;
-    left: 0;
-    background: #ffffff;
-    min-width: 200px;
-    border-radius: 15px;
-    padding: 10px 0;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: 0.3s ease;
-    z-index: 3000;
-}
-
-.dropdown a {
-    display: block;
-    padding: 10px 20px;
-    color: #1a1a1a;
-    font-size: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.dropdown a:hover {
-    background: rgba(112, 0, 255, 0.1);
-    color: var(--accent);
-}
-
-/* hover zamanı açılsın */
-.nav-item:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* ox işarəsi animasiya */
-.nav-item:hover i {
-    transform: rotate(180deg);
-}
-
-.nav-item i {
-    transition: 0.3s;
-    font-size: 10px;
-}
-
-
-/* --- SIDEBAR MEGA MENU --- */
-.sidebar-megamenu {
-    position: absolute;
-    top: 0;
-    left: 80px;
-    width: 600px;
-    height: 100vh;
-    background: #ffffff;
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-20px);
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    box-shadow: 20px 0 60px rgba(0,0,0,0.5);
-}
-
-.sidebar .nav-item:hover .sidebar-megamenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-}
-
-.mm-section h3 {
-    color: #1a1a1a;
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
-}
-
-.mm-link {
-    display: flex;
-    gap: 15px;
-    padding: 12px;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.mm-link:hover {
-    background: #f5f6fa;
-}
-
-.mm-link i {
-    color: var(--accent);
-    font-size: 18px;
-}
-
-.mm-link h4 {
-    color: #1a1a1a;
-    font-size: 14px;
-}
-
-.mm-link p {
-    font-size: 11px;
-    color: #666;
-}
-
-
-/* --- HEADER YENİLƏNMİŞ --- */
-.header-wrapper { 
-    position: fixed; 
-    top: 20px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    width: 90%; 
-    max-width: 1300px; 
-    z-index: 2000; 
-}
-
-.site-header {
-    width: 100%; 
-    height: 75px; 
-    background: var(--header-bg);
-    border-radius: 50px; 
-    display: flex; 
-    align-items: center; 
-    padding: 0 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-    justify-content: space-between; /* Elementləri aralı saxlayır */
-}
-
-/* Naviqasiya və Sağ tərəf */
-.nav-content { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px;
-}
-
-.nav-links { 
-    display: flex; 
-    gap: 20px; 
-    align-items: center;
-}
-
-/* Profil Şəkli Stili */
-.profile-container {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid var(--accent);
-    cursor: pointer;
-    transition: 0.3s;
-    flex-shrink: 0;
-}
-
-.profile-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-container:hover {
-    box-shadow: 0 0 15px rgba(112, 0, 255, 0.4);
-    transform: scale(1.05);
-}
-
-
-
-.hero-section{padding:120px 50px 80px 120px; display:flex;align-items:center;justify-content:space-between;min-height:80vh;}
-.hero-section .hero-text h1{font-size:60px;font-weight:800;line-height:1.1;}
-.hero-section .hero-text p{margin:20px 0;opacity:0.6;max-width:450px;}
-
-.section-title{font-size:32px;font-weight:800;margin-bottom:40px;color:var(--accent);text-align:center;}
-
-.container{padding:80px 50px 50px 120px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
-
-.data-card{background:var(--surface);padding:30px;border-radius:25px;border:1px solid rgba(255,255,255,0.05);}
-.data-card h3{margin-bottom:20px;color:var(--neon-blue);}
-
-.team-member{background:var(--surface);padding:20px;border-radius:20px;text-align:center;}
-.team-member img{width:64%;border-radius:50%;margin-bottom:15px;}
-.team-member h4{margin-bottom:5px;color:var(--accent);}
-.team-member p{font-size:14px;color:#aaa;}
-
-.contact-form{display:flex;flex-direction:column;gap:15px;}
-.contact-form input,.contact-form textarea{padding:12px;border-radius:10px;border:1px solid #333;background:#0b0e14;color:white;width:100%;resize:none;}
-.contact-form button{background:var(--accent);color:white;border:none;padding:12px 20px;border-radius:10px;cursor:pointer;}
-
-/* --- FOOTER --- */
-        .site-footer { background: #0b0e14; color: #ffffff; padding: 80px 50px 40px 120px; border-top: 1px solid #222; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr) 1.5fr; gap: 40px; padding-bottom: 60px; border-bottom: 1px solid #222; }
-        .footer-brand img { height: 60px; width: auto; margin-bottom: 15px; }
-        .footer-brand h2 { font-size: 22px; font-weight: 800; line-height: 1.3; }
-        .footer-col h4 { color: #555; font-size: 12px; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 15px; font-size: 14px; opacity: 0.8; cursor: pointer; transition: 0.2s; }
-        .footer-col ul li:hover { opacity: 1; color: var(--accent); }
-        
-        .footer-contact { text-align: right; }
-        .footer-contact .phone { font-size: 38px; font-weight: 800; color: #a366ff; margin: 10px 0; }
-        .footer-contact .socials { display: flex; gap: 15px; justify-content: flex-end; margin-top: 25px; font-size: 20px; }
-        .footer-contact .socials i { cursor: pointer; opacity: 0.7; transition: 0.3s; }
-        .footer-contact .socials i:hover { opacity: 1; color: var(--accent); }
-
-        .footer-bottom { padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; opacity: 0.5; }
-        .bottom-links { display: flex; gap: 25px; }
-
-</style>
+        @media (max-width: 992px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .dev-hero { padding-top: 120px; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Sidebar -->
-<div class="sidebar">
-    <div class="logo">X</div>
+    <section class="dev-hero">
+        <h1>Gələcəyin <span class="gradient-text">Veb</span> <br> Arxitekturası</h1>
+        <p style="color: rgba(255,255,255,0.5); font-size: 18px; max-width: 700px; margin: 0 auto;">
+            Biz təkcə kod yazmırıq, istifadəçilərin heyran qalacağı rəqəmsal təcrübələr yaradırıq. 
+            Sürətli, estetik və hər cihazda mükəmməl.
+        </p>
+        <div class="tech-tags">
+            <span class="tag">React.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">PHP (Laravel)</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">MongoDB</span>
+        </div>
+    </section>
 
-    <ul>
-        <li class="nav-item">
-            <i class="fa-solid fa-layer-group"></i>
+    <div class="service-grid">
+        <div class="glass-card">
+            <i class="fa-solid fa-code-merge"></i>
+            <h3>Modular Backend</h3>
+            <p>Yüksək yüklərə davamlı, MVC strukturuna əsaslanan server həlləri və genişlənə bilən API sistemləri.</p>
+        </div>
+        <div class="glass-card">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <h3>Creative Frontend</h3>
+            <p>Neon dizayn, tünd rejim və ultra-sürətli interfeyslər ilə müştərilərinizi ilk saniyədən cəlb edin.</p>
+        </div>
+        <div class="glass-card">
+            <i class="fa-solid fa-rocket"></i>
+            <h3>SEO & Performans</h3>
+            <p>Google sürət testlərindən 100 xal alan, axtarış sistemləri üçün tam optimizasiya olunmuş kod quruluşu.</p>
+        </div>
+    </div>
 
-            <div class="sidebar-megamenu">
-                <div class="mm-section">
-                    <h3>Veb & Dizayn</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-code"></i>
-                        <div>
-                            <h4>Veb İnkişaf</h4>
-                            <p>Frontend & Backend</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <div>
-                            <h4>UI / UX</h4>
-                            <p>İstifadəçi təcrübəsi</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="mm-section">
-                    <h3>İnfrastruktur</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-cloud"></i>
-                        <div>
-                            <h4>Bulud Sistemləri</h4>
-                            <p>AWS · Azure · GCP</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <div>
-                            <h4>Kibertəhlükəsizlik</h4>
-                            <p>Audit & Pen-test</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </li>
-
-        <li class="nav-item">
-            <i class="fa-solid fa-chart-pie"></i>
-
-              <div class="sidebar-megamenu">
-                <div class="mm-section">
-                    <h3>Kriptoqrafiya</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-code"></i>
-                        <div>
-                            <h4>Kriptovalyuta</h4>
-                            <p>Kriptovalyutalar satın almaq</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <div>
-                            <h4>Süni intellekt həlləri</h4>
-                            <p>Sİ ilə bağlı hər şey</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="mm-section">
-                    <h3>İnfrastruktur</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-cloud"></i>
-                        <div>
-                            <h4>Bulud Sistemləri</h4>
-                            <p>AWS · Azure · GCP</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <div>
-                            <h4>Kibertəhlükəsizlik</h4>
-                            <p>Audit & Pen-test</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-        </li>
-        <li class="nav-item"><i class="fa-solid fa-gear"></i>
-          <div class="sidebar-megamenu">
-                <div class="mm-section">
-                    <h3>Xəbərlər</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-code"></i>
-                        <div>
-                            <h4>Bütün xəbərlər</h4>
-                            <p>Bütün xəbərlər burada</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <div>
-                            <h4>UI / UX</h4>
-                            <p>İstifadəçi təcrübəsi</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="mm-section">
-                    <h3>İnfrastruktur</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-cloud"></i>
-                        <div>
-                            <h4>Bulud Sistemləri</h4>
-                            <p>AWS · Azure · GCP</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <div>
-                            <h4>Kibertəhlükəsizlik</h4>
-                            <p>Audit & Pen-test</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        
-        </li>
-        <li class="nav-item"><i class="fa-solid fa-user"></i>
-        
-              <div class="sidebar-megamenu">
-                <div class="mm-section">
-                    <h3>Veb & Dizayn</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-code"></i>
-                        <div>
-                            <h4>Veb İnkişaf</h4>
-                            <p>Frontend & Backend</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <div>
-                            <h4>UI / UX</h4>
-                            <p>İstifadəçi təcrübəsi</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="mm-section">
-                    <h3>İnfrastruktur</h3>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-cloud"></i>
-                        <div>
-                            <h4>Bulud Sistemləri</h4>
-                            <p>AWS · Azure · GCP</p>
-                        </div>
-                    </a>
-                    <a class="mm-link" href="#">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <div>
-                            <h4>Kibertəhlükəsizlik</h4>
-                            <p>Audit & Pen-test</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        
-        </li>
-    </ul>
-</div>
-
-<!-- Header -->
-<div class="header-wrapper">
-    <header class="site-header">
-        <a href="#" class="brand-block">
-            <div class="logo-container">
-                <img src="/backgr-xaze.png" alt="Logo" style="height: 45px; width: auto; vertical-align: middle;">
-            </div>
-            <div class="brand-text" style="color: var(--header-text); font-weight: 800;">
-                <span style="font-size: 20px;">X</span><span>azerbaijan</span>
-            </div>
-        </a>
-        
-        <div class="nav-content" id="navContent">
-            <nav class="nav-links">
-                <div class="nav-item">
-                    <a href="#">Xidmətlər <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="dropdown">
-                        <a href="#">Veb inkişaf</a>
-                        <a href="#">Bulud sistemləri</a>
-                        <a href="#">Server / Hosting</a>
-                        <a href="#">Kibertəhlükəsizlik</a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#services">Haqqımızda <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="dropdown">
-                        <a href="#">Missiya</a>
-                        <a href="#">Komanda</a>
-                        <a href="#">Partnyorlar</a>
-                    </div>
-                </div>
-                <a href="#">Giriş</a>
-                <a href="#contact">Əlaqə</a>
-            </nav>
-
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <i class="fa-solid fa-magnifying-glass search-trigger" onclick="toggleMainSearch(true)"></i>
-                <div class="profile-container">
-                    <img src="/NA.jpg" alt="User Profile">
-                    
-                </div>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2 style="font-size: 35px; margin-bottom: 20px;">Yeni layihəniz var?</h2>
+            <p style="opacity: 0.6; margin-bottom: 30px;">
+                Gəlin ideyanızı birlikdə dəyərləndirək. Bizimlə əlaqə saxlayın və 24 saat ərzində texniki təklif alın.
+            </p>
+            <div style="display: flex; gap: 20px; font-size: 20px;">
+                <i class="fa-solid fa-envelope" style="color: var(--cyan);"></i>
+                <span>elnur.code@gmail.com</span>
             </div>
         </div>
 
-        <div class="search-overlay" id="searchOverlay">
-            <input type="text" placeholder="Sistemdə axtarış edin..." id="mainSearchInput">
-            <i class="fa-solid fa-xmark close-search" onclick="toggleMainSearch(false)"></i>
+        <div class="form-wrapper">
+            <form id="orderForm" action="https://formspree.io/f/mwvavoja" method="POST">
+                <input type="text" name="name" class="custom-input" placeholder="Adınız" required>
+                <input type="email" name="email" class="custom-input" placeholder="Email" required>
+                <select name="type" class="custom-input">
+                    <option value="web">Veb Sayt</option>
+                    <option value="app">Veb Tətbiq</option>
+                    <option value="audit">Texniki Audit</option>
+                </select>
+                <textarea name="message" class="custom-input" rows="4" placeholder="Layihə haqqında qısa məlumat..." required></textarea>
+                <button type="submit" id="orderBtn" class="submit-glow">Layihəni Başlat</button>
+            </form>
         </div>
-    </header>
-</div>
+    </div>
 
-<!-- Hero -->
-<section class="hero-section">
-<div class="hero-text">
-<h1>Peşəkar <br><span style="color:var(--accent)">Veb İnkişaf</span></h1>
-<p>Modern texnologiyalar ilə saytlar hazırlayırıq. Responsive, sürətli və təhlükəsiz həllər təqdim edirik.</p>
-</div>
-</section>
-
-<!-- Services -->
-<section id="services">
-<h2 class="section-title">Xidmətlərimiz</h2>
-<div class="container">
-<div class="data-card"><h3><i class="fa-solid fa-code"></i> Frontend</h3><p>HTML, CSS, JavaScript, React və Vue ilə interaktiv saytlar.</p></div>
-<div class="data-card"><h3><i class="fa-solid fa-server"></i> Backend</h3><p>Node.js, Python, PHP ilə server tərəfi və API həlləri.</p></div>
-<div class="data-card"><h3><i class="fa-solid fa-database"></i> Database</h3><p>MySQL, PostgreSQL və MongoDB ilə məlumat bazası idarəsi.</p></div>
-<div class="data-card"><h3><i class="fa-solid fa-mobile-screen"></i> Mobile Apps</h3><p>React Native və Flutter ilə mobil tətbiq inkişafı.</p></div>
-</div>
-</section>
-
-<!-- Portfolio -->
-<section id="portfolio">
-<h2 class="section-title">Portfolio</h2>
-<div class="container">
-<div class="data-card"><h3>Şirkət Saytı</h3><p>Responsive və modern dizayn.</p></div>
-<div class="data-card"><h3>E-Ticarət</h3><p>Full-stack e-commerce həlləri.</p></div>
-<div class="data-card"><h3>Landing Page</h3><p>SEO optimizasiya və sürətli yükləmə.</p></div>
-<div class="data-card"><h3>Admin Panel</h3><p>Dashboard və analitika modulları.</p></div>
-</div>
-</section>
-
-<!-- Team -->
-<section id="team">
-<h2 class="section-title">Komanda</h2>
-<div class="container">
-<div class="team-member">
-<img src="/NA.jpg" alt="Komanda Üzvü">
-<h4>Elvin Məmmədov</h4>
-<p>Frontend Developer</p>
-</div>
-<div class="team-member">
-<img src="/NA.jpg" alt="Komanda Üzvü">
-<h4>Aysel Quliyeva</h4>
-<p>Backend Developer</p>
-</div>
-<div class="team-member">
-<img src="/NA.jpg" alt="Komanda Üzvü">
-<h4>Rəşad Əliyev</h4>
-<p>UI/UX Designer</p>
-</div>
-<div class="team-member">
-<img src="/NA.jpg" alt="Komanda Üzvü">
-<h4>Sevda Həsənova</h4>
-<p>Project Manager</p>
-</div>
-</div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-<h2 class="section-title">Əlaqə</h2>
-<div class="container">
-<div class="data-card">
-<form class="contact-form">
-<input type="text" placeholder="Adınız" required>
-<input type="email" placeholder="Email" required>
-<textarea rows="5" placeholder="Mesajınız" required></textarea>
-<button type="submit">Göndər</button>
-</form>
-</div>
-</div>
-</section>
-
- <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="/backgr-xaze.png" alt="Digital Azerbaijan" onerror="this.src='https://via.placeholder.com/150x60?text=LOGO'"> 
-                <h2>Azərbaycanın rəqəmsal gələcəyini qururuq</h2>
-            </div>
-
-            <div class="footer-col">
-                <h4>Haqqımızda</h4>
-                <ul>
-                    <li>Agentlik</li>
-                    <li>Hesabat</li>
-                    <li>Rəhbərlik</li>
-                    <li>Qanunvericilik</li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Media</h4>
-                <ul><li>Xəbərlər</li></ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Karyera</h4>
-                <ul><li>Vakansiyalar</li></ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Xidmətlər</h4>
-                <ul>
-                    <li>mygov</li>
-                    <li>digital.bridge</li>
-                    <li>RSD</li>
-                    <li>digiMATE</li>
-                </ul>
-            </div>
-
-            <div class="footer-contact">
-                <p style="opacity: 0.5; font-size: 11px;">Ölkədaxili zənglər üçün</p>
-                <div class="phone">883</div>
-                <p style="font-size: 13px; line-height: 1.6; opacity: 0.8;">Ünvan: Atatürk prospekti 89 Bakı,<br>Azərbaycan / AZ1069</p>
-                <div class="socials">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-x-twitter"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="bottom-links">
-                <span>Heydər Əliyev Fondu</span>
-                <span>Azərbaycan Respublikasının Prezidenti</span>
-                <span>RİNN</span>
-                <span>Virtual Qarabağ</span>
-            </div>
-            <div>2026 © Bütün hüquqlar qorunur</div>
-        </div>
-    </footer>
-
-    <div class="chat-launch"><i class="fa-solid fa-headset"></i></div>
-
-     <script>
-        // HEADER SEARCH TOGGLE LOGIC
-        function toggleMainSearch(show) {
-            const navContent = document.getElementById('navContent');
-            const searchOverlay = document.getElementById('searchOverlay');
-            const searchInput = document.getElementById('mainSearchInput');
-
-            if (show) {
-                navContent.style.display = 'none';
-                searchOverlay.style.display = 'flex';
-                searchInput.focus();
-            } else {
-                navContent.style.display = 'flex';
-                searchOverlay.style.display = 'none';
-                searchInput.value = '';
-            }
-        }
-
-        // WHEEL LOGIC
-        const sectors = [
-            {n: "DEVOPS", c: "#ff9100"}, {n: "BULUD", c: "#eaff00"}, {n: "VEB", c: "#ff0000"},
-            {n: "SERVER", c: "#00ff8c"}, {n: "KİBER", c: "#ffbb00"}, {n: "MOBİL", c: "#00ff1a"},
-            {n: "DƏSTƏK", c: "#d000ff"}, {n: "ANALİTİKA", c: "#00ccff"}
-        ];
-        const svg = document.getElementById('wheelSvg');
-        sectors.forEach((s, i) => {
-            const angle = 360 / sectors.length;
-            const startAngle = i * angle;
-            const endAngle = (i + 1) * angle;
-            const x1 = 300 + 280 * Math.cos(Math.PI * startAngle / 180);
-            const y1 = 300 + 280 * Math.sin(Math.PI * startAngle / 180);
-            const x2 = 300 + 280 * Math.cos(Math.PI * endAngle / 180);
-            const y2 = 300 + 280 * Math.sin(Math.PI * endAngle / 180);
-            const pathData = `M 300 300 L ${x1} ${y1} A 280 280 0 0 1 ${x2} ${y2} Z`;
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            path.setAttribute("d", pathData);
-            path.setAttribute("fill", s.c);
-            path.onclick = () => {
-                svg.classList.remove('spinning');
-                document.getElementById('center-text').innerText = s.n;
-                document.getElementById('center-text').style.color = s.c;
-            };
-            svg.appendChild(path);
-        });
-
-        function startSpinning() { 
-            svg.classList.add('spinning'); 
-            document.getElementById('center-text').innerText = "TECH HUB";
-            document.getElementById('center-text').style.color = "#7000ff";
-        }
-
-        // CAROUSEL INFINITE SCROLL JS
-        function setupCarousel() {
-            const track = document.getElementById('partnersTrack');
-            const items = track.innerHTML;
-            track.innerHTML += items; 
-        }
-
-        // FINANCE
-        const currencyData = [
-            {code: "USD", val: "1.7000", flag: "🇺🇸"}, {code: "EUR", val: "1.8425", flag: "🇪🇺"},
-            {code: "TRY", val: "0.0512", flag: "🇹🇷"}, {code: "RUB", val: "0.0185", flag: "🇷🇺"},
-            {code: "GBP", val: "2.1480", flag: "🇬🇧"}, {code: "GEL", val: "0.6350", flag: "🇬🇪"},
-            {code: "CNY", val: "0.2340", flag: "🇨🇳"}, {code: "CHF", val: "1.9110", flag: "🇨🇭"}
-        ];
-
-        function initFinance() {
-            const container = document.getElementById('currencyContainer');
-            container.innerHTML = '';
-            currencyData.forEach(c => {
-                container.innerHTML += `<div class="currency-item"><span>${c.flag}</span><br><b>${c.code}</b><br>${c.val}</div>`;
-            });
-            updateCrypto();
-        }
-
-        async function updateCrypto() {
-            const coin = document.getElementById('cryptoInput').value.toLowerCase() || 'bitcoin';
-            document.getElementById('cryptoNameDisplay').innerText = coin;
-            try {
-                const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin}&vs_currencies=usd`);
-                const data = await res.json();
-                if (data[coin]) {
-                    const priceUSD = data[coin].usd;
-                    document.getElementById('cryptoPrice').innerText = "$" + priceUSD.toLocaleString();
-                    document.getElementById('cryptoInAZN').innerText = "≈ " + (priceUSD * 1.70).toLocaleString() + " AZN";
-                }
-            } catch (e) { }
-        }
-
-        async function getWeather() {
-            const city = document.getElementById('cityInput').value || 'Baku';
-            try {
-                const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&format=json`);
-                const geoData = await geoRes.json();
-                if (!geoData.results) return;
-                const { latitude, longitude, name } = geoData.results[0];
-                const wRes = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,pressure_msl&timezone=auto`);
-                const w = await wRes.json();
-                document.getElementById('cityName').innerText = name;
-                document.getElementById('mainTemp').innerText = `${Math.round(w.current.temperature_2m)}°C`;
-                document.getElementById('humidity').innerText = `${w.current.relative_humidity_2m}%`;
-                document.getElementById('windSpeed').innerText = `${w.current.wind_speed_10m} km/s`;
-                document.getElementById('pressure').innerText = `${Math.round(w.current.pressure_msl)} hPa`;
-                document.getElementById('weatherDesc').innerText = "Məlumat yeniləndi";
-            } catch (e) { }
-        }
-
-        window.onload = () => { 
-            initFinance(); 
-            getWeather(); 
-            setupCarousel(); 
-        };
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
